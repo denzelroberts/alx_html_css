@@ -27,6 +27,8 @@ border: 1px solid;
 
 th{
     background-color: rgb(255, 237, 237);
+    text-align: left;
+    font-weight: bold;
 }
 
 header{
