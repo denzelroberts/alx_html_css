@@ -7,7 +7,7 @@ main{
     display: flex;
     flex-direction: row;
     flex: auto;
-    width: auto;
+    width: 100%;
 }
 
 article{
@@ -55,5 +55,6 @@ footer{
     display: flex;
     flex-direction: row;
     background-color: rgb(255, 237, 237);
-    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
 }
