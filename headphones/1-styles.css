@@ -5,7 +5,8 @@
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
     --color-link-hover: #FF6565;
-    --text-color: var(--color-black);
+    --text-color: #071629;
+
 }
 
 @font-face {
@@ -33,20 +34,123 @@
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro';
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 20px 20px;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 200px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Nav menu */
+.nav{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background-color: transparent;
+    overflow: hidden;
+    margin-top: 50px;
+    text-align: center;
+}
+.menu a{
+    display: block;
+    padding: 30px;
+    color: white;
+    text-decoration: none;
+}
+.menu a:hover{
+    color: var(--color-link-hover);
+}
+.nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+/* Menu Icon */
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 20px 20px;
+}/* Style label tag */
+
+.hamb-line {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+h1, h2, p {
+    color: var(--text-color);
 }
 
 h1  {
-    font-size: 40px;
+    font-size: 30px;
     font-style: 'bold';
 }
 
 h2 {
-    font-size: 25px;
+    font-size: 20px;
     font-style: 'bold';
 }
 
 p {
-    font-size: 18px;
+    font-size: 14px;
     font-style: 'normal';
 }
 
@@ -59,50 +163,26 @@ p {
     background-position: center;
 }
 
-.navbar {
-    width: 1000px;
-    margin: auto;
-    padding: 35px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    width: 120px;
-}
-
-.navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    text-transform: lowercase;
-    font-weight: bold;
-}
-
-.navbar ul li :hover {
-    color: var(--color-link-hover);
-}
-
 .section-banner {
 width: 100%;
 position: absolute;
-top: 50%;
+top: 60%;
 transform: translateY(-50%);
+align-items: center;
 }
 
 .section-content {
     max-width: 1000px;
-    margin: auto;
+    margin: auto !important;
    text-align: center;
 }
 
-.section-banner h1, h2, p {
+.section-content .section-content-wrapper{
+height: auto;
+margin: 50px;
+}
+
+.herotext {
     color: #ffffff;
 }
 
@@ -124,31 +204,43 @@ button:hover {
     opacity: 0.9
 }
 
-@media screen and (max-width: 480px) {
-    .navbar{
-        width: 400px;
-        margin: 0 20px;
-    }    
-
-    .section-banner {
-        margin: 0;
-        padding: 0;
+/* Responsiveness */
+@media (min-width: 768px) {
+   .header {
+    flex-direction: row;
+   }
+   
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+        margin-top: 0;
     }
-    .section-content {
-            width: 300px;
-            margin: auto;
-        }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--color-link-hover);
 
-        h1 {
-            font-size: 30px;
-        }
+    }
 
-        h2 {
-            font-size: 18px;
-            font-weight: normal;
-        }
+    .hamb{
+        display: none;
+    }
 
-        p {
-            font-size: 16px;
-        }
+    h1{
+        font-size: 40px;
+    }
+
+    h2{
+        font-size: 25px;
+    }
+
+    p{
+        font-size: 16px;
+    }
 }
