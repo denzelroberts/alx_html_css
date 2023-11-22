@@ -1,6 +1,5 @@
 :root {
     --color-primary: #FF6565;
-    --color-black: #090909;
     --color-grey: #a0a0a0;
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
@@ -161,15 +160,18 @@ ul {
     margin-top: 50px;
     text-align: center;
 }
+
 .menu a{
     display: block;
     padding: 30px;
     color: white;
     text-decoration: none;
 }
+
 .menu a:hover{
     color: var(--color-link-hover);
 }
+
 .nav{
     max-height: 0;
     transition: max-height .5s ease-out;
@@ -178,7 +180,6 @@ ul {
 /* Menu Icon */
 .hamb{
     cursor: pointer;
-    float: right;
     padding: 20px 20px;
 }/* Style label tag */
 
@@ -201,6 +202,7 @@ ul {
     transition: all .2s ease-out;
     width: 100%;
 }
+
 .hamb-line::before{
     top: 5px;
 }
@@ -208,9 +210,10 @@ ul {
     top: -5px;
 }
 
+/* Hide checkbox */
 .side-menu {
     display: none;
-} /* Hide checkbox */
+} 
 
 /* Toggle menu icon */
 .side-menu:checked ~ nav{
@@ -268,12 +271,22 @@ align-items: center;
     max-width: 1000px;
     margin: auto !important;
    text-align: center;
+   padding: 50px 0;
 }
 
 .section-content .section-content-wrapper{
 height: auto;
-margin: 60px;
 }
+
+.section-content-background{
+    width: 100%;
+    background-image: url(Resources/Images/headphones_hero_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
 
 .herotext {
     color: #ffffff;
@@ -303,15 +316,34 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     justify-content: center;
-    margin: 100px  auto;
+    margin: 50px  auto;
 }
 
 .icon-box {
+    display: flex;
+    flex-direction: column;
     padding: 0 20px;
 }
 
 .icon-box p {
     font-size: 12px;
+}
+
+.icon-box p,h3 {
+    margin-top: 20px;
+}
+
+.icon-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-image: url(Resources/Images/pentagone.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 20px;
 }
 
 /* Responsiveness */
