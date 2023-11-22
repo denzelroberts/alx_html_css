@@ -297,12 +297,29 @@ button:hover {
     opacity: 0.9
 }
 
+.icon-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    margin: 100px  auto;
+}
+
+.icon-box {
+    padding: 0 20px;
+}
+
+.icon-box p {
+    font-size: 12px;
+}
+
 /* Responsiveness */
 @media (min-width: 768px) {
    .header {
     flex-direction: row;
    }
-   
+
     .nav{
         max-height: none;
         top: 0;
