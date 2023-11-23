@@ -1,0 +1,516 @@
+:root {
+  --color-primary: #FF6565;
+  --color-grey: #a0a0a0;
+  --color-light-grey: #f3f3f3;
+  --color-dark-grey: #353535;
+  --color-link-hover: #FF6565;
+  --text-color: #071629;
+ --color-secondary: #071629;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: 'normal';
+  src: local(''),
+    url('/headphones/Resources/Fonts/source-sans-pro/SourceSansPro-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: 'bold';
+  src: local(''),
+    url('/headphones/Resources/Fonts/source-sans-pro/SourceSansPro-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Spin Cycle';
+  font-style: '';
+  src: local(''),
+    url('/headphones/Resources/Fonts/Spin-Cycle-OT/spincycle_ot.otf');
+}
+
+@font-face {
+  font-family: 'holberton_school-icon';
+  src: url('fonts/holberton_school-icon.eot?sq4eq4');
+  src: url('fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
+    url('fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
+    url('fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
+    url('fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="holberton_school-icon-"],
+[class*=" holberton_school-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'holberton_school-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.holberton_school-icon-arrow_1:before {
+  content: "\e900";
+}
+
+.holberton_school-icon-arrow_2:before {
+  content: "\e901";
+}
+
+.holberton_school-icon-arrow_3:before {
+  content: "\e902";
+}
+
+.holberton_school-icon-arrow_4:before {
+  content: "\e903";
+}
+
+.holberton_school-icon-arrow_5:before {
+  content: "\e904";
+}
+
+.holberton_school-icon-check:before {
+  content: "\e905";
+}
+
+.holberton_school-icon-ic_bag:before {
+  content: "\e906";
+}
+
+.holberton_school-icon-ic_cart:before {
+  content: "\e907";
+}
+
+.holberton_school-icon-ic_facebook:before {
+  content: "\e908";
+}
+
+.holberton_school-icon-ic_hearing:before {
+  content: "\e909";
+}
+
+.holberton_school-icon-ic_instagram:before {
+  content: "\e90a";
+}
+
+.holberton_school-icon-ic_laptop:before {
+  content: "\e90b";
+}
+
+.holberton_school-icon-ic_money:before {
+  content: "\e90c";
+}
+
+.holberton_school-icon-ic_music:before {
+  content: "\e90d";
+}
+
+.holberton_school-icon-ic_sound:before {
+  content: "\e90e";
+  color: var(--color-primary);
+  font-size: 2em;
+}
+
+.holberton_school-icon-ic_twitter:before {
+  content: "\e90f";
+}
+
+.holberton_school-icon-ic_video:before {
+  content: "\e910";
+}
+
+.holberton_school-icon-menu:before {
+  content: "\e911";
+}
+
+.holberton_school-icon-search_1:before {
+  content: "\e912";
+}
+
+.holberton_school-icon-search_2:before {
+  content: "\e913";
+}
+
+.holberton_school-icon-star:before {
+  content: "\e914";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro';
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: row-reverse;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 20px 20px;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 200px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Nav menu */
+.nav {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  background-color: transparent;
+  overflow: hidden;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.menu a {
+  display: block;
+  padding: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: var(--color-link-hover);
+}
+
+.nav {
+  max-height: 0;
+  transition: max-height .5s ease-out;
+}
+
+/* Menu Icon */
+.hamb {
+  cursor: pointer;
+  padding: 20px 20px;
+}
+
+/* Style label tag */
+
+.hamb-line {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+
+}
+
+/* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after {
+  background: white;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.hamb-line::before {
+  top: 5px;
+}
+
+.hamb-line::after {
+  top: -5px;
+}
+
+/* Hide checkbox */
+.side-menu {
+  display: none;
+}
+
+/* Toggle menu icon */
+.side-menu:checked~nav {
+  max-height: 100%;
+}
+
+.side-menu:checked~.hamb .hamb-line {
+  background: transparent;
+}
+
+.side-menu:checked~.hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.side-menu:checked~.hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+h1,
+h2,
+p {
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 30px;
+  font-style: 'bold';
+}
+
+h2 {
+  font-size: 20px;
+  font-style: 'bold';
+}
+
+p {
+  font-size: 14px;
+  font-style: 'normal';
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url(Resources/Images/headphones_hero_1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.section-banner {
+  width: 100%;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  align-items: center;
+}
+
+.section-content {
+  max-width: 1000px;
+  margin: auto !important;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.section-content .section-content-wrapper {
+  height: auto;
+}
+
+.section-content-background {
+  width: 100%;
+  background-image: url(Resources/Images/headphones_hero_2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+.herotext {
+  color: #ffffff;
+}
+
+button {
+  width: fit-content;
+  height: 100%;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  background-color: var(--color-primary);
+  margin: 40px 0;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.50);
+}
+
+button:hover {
+  opacity: 0.9
+}
+
+.icon-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  animation: 1s ease-out 0s 1 slideInLeft;
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.icon-box:hover {
+  transform: rotate(30deg);
+  transition: all .2s ease-out;
+}
+
+.icon-box p {
+  font-size: 12px;
+}
+
+.icon-box p,
+h3 {
+  margin-top: 20px;
+}
+
+.icon-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background-image: url(Resources/Images/pentagone.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 20px 0;
+}
+
+.icon-stats:hover {
+  transform: scale(1.2);
+  transition-duration: 2s;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textbox {
+  width: 300px;
+  border: none;
+  stroke: #071629;
+}
+
+.textbox-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.border-line {
+  background: var(--color-grey);
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: var(--color-secondary);
+}
+
+footer a {
+  margin-right: 10px;
+}
+
+.footer-wrapper {
+  height: 100px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer p{
+  color: var(--color-grey);
+}
+
+/* Animation */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .nav {
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: right;
+    width: fit-content;
+    background-color: transparent;
+    margin-top: 0;
+  }
+
+  .menu li {
+    float: left;
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+    color: var(--color-link-hover);
+
+  }
+
+  .hamb {
+    display: none;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .icon-row {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+  }
+
+  .icon-box {
+    padding: 0 20px;
+  }
+
+  .icon-stats {
+    margin: 0 20px;
+  }
+
+  .footer-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
