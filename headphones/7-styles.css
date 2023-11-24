@@ -98,7 +98,7 @@ ul {
   display: block;
   height: 2px;
   position: relative;
-  width: 24px;
+  width: 18px;
 
 }
 
@@ -112,7 +112,7 @@ ul {
   height: 100%;
   position: absolute;
   transition: all .2s ease-out;
-  width: 100%;
+  width: 24px;
 }
 
 .hamb-line::before {
