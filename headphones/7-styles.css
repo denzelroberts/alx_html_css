@@ -5,7 +5,7 @@
   --color-dark-grey: #353535;
   --color-link-hover: #FF6565;
   --text-color: #071629;
- --color-secondary: #071629;
+  --color-secondary: #071629;
 }
 
 @font-face {
@@ -44,10 +44,8 @@ ul {
   display: flex;
   flex-direction: row-reverse;
   position: sticky;
-  top: 0;
   width: 100%;
   padding: 20px 20px;
-  justify-content: center;
   justify-content: space-between;
 }
 
@@ -63,6 +61,7 @@ ul {
   height: auto;
   position: fixed;
   background-color: transparent;
+  /*Check this guy right here*/
   overflow: hidden;
   margin-top: 50px;
   text-align: center;
@@ -99,7 +98,6 @@ ul {
   height: 2px;
   position: relative;
   width: 18px;
-
 }
 
 /* Style span tag */
@@ -246,8 +244,8 @@ button:hover {
 }
 
 .icon-box:hover {
-  transform: rotate(30deg);
-  transition: all .2s ease-out;
+  transform: rotate(5deg);
+  transition: all .2s ease-in-out;
 }
 
 .icon-box p {
@@ -296,6 +294,7 @@ form {
   align-items: flex-start;
 }
 
+
 .border-line {
   background: var(--color-grey);
   display: block;
@@ -322,7 +321,7 @@ footer a {
   justify-content: space-between;
 }
 
-footer p{
+footer p {
   color: var(--color-grey);
 }
 
@@ -331,6 +330,7 @@ footer p{
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(0);
   }
