@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+</head>
+<body>
+    <main>
+        <form id="registration-form" onsubmit="validateCheckboxes()">
+            <div>
+                <!-- Name -->
+                <label for="name">Name</label>
+                <input id="name" placeholder="Enter your name" required>
+            </div>
+            <div>
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Enter your e-mail" required>
+            </div>
+            <div>
+                <!-- Checkboxes -->
+                <input type="checkbox" id="excellent" name="rating" value="Excellent">
+                <label for="excellent">Excellent</label><br>
+
+                <input type="checkbox" id="good" name="rating" value="Good">
+                <label for="good">Good</label><br>
+
+                <input type="checkbox" id="average" name="rating" value="Average">
+                <label for="average">Average</label><br>
+
+                <input type="checkbox" id="poor" name="rating" value="Poor">
+                <label for="poor">Poor</label><br>
+            </div>
+            <div>
+                <!-- File upload -->
+                <input type="file" id="uploadFile" name="filename" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+
+        <script>
+            //check if at least one checkbox has been selected
+            function validateCheckboxes() {
+              const checkboxes = document.querySelectorAll('input[name="rating"]:checked');
+              if (checkboxes.length === 0) {
+                alert("Please select at least one interest.");
+                return false; // Prevent form submission
+              }
+              return true;
+            }
+          </script>
+    </main>
+</body>
+</html>

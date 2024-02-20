@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences Survey</title>
+</head>
+<body>
+    <h1>User Preferences Survey</h1>
+    <form id="preferencesForm">
+        <!-- Name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+
+        <!-- Favorite Color (Dropdown) -->
+        <label for="color">Favorite Color:</label>
+        <select id="color" name="color" required>
+            <option value="" disabled selected>Select a color</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+        <br>
+
+        <!-- Time -->
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" name="time" required>
+        <br>
+
+        <!-- Date -->
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required>
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
